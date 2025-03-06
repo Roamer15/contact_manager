@@ -37,3 +37,31 @@ body {
   color: #ffffffe2;
   z-index: 3;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  input {
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid #0aba3c;
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  button {
+    margin-top: 20px;
+    border: none;
+    background-color: #00ff48;
+    color: #ffffffe2;
+    font-size: 16px;
+    padding: 0.5rem;
+    border-radius: 20px;
+  }
+}
