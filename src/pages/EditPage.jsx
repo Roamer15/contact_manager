@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router';
 import { ContactContext } from '../context/Context';
 import ContactForm from '../components/ContactForm';
 
-export function EditPage() {
+export default function EditPage() {
     const { index } = useParams();
     const navigate = useNavigate();
     const { contacts, setContacts } = useContext(ContactContext);
