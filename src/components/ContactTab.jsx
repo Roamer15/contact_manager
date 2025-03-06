@@ -6,14 +6,12 @@ export default function ContactTab({contacts, onDelete}) {
         <div className="contact-list">
                 {contacts.map((contact, index) => (
                     <div key={index} className="contact-item">
-                        {contact.profilePic && (
                             <img
-                                src={URL.createObjectURL(contact.profilePic)}
+                                src={contact.profilePic ? URL.createObjectURL(contact.profilePic) : 'https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg'}
                                 alt="Profile"
                             />
-                        )}
+
                         <div className="info">
-                            <p>{index}</p>
                             <h3>{contact.name}</h3>
                             <p>{contact.telephone}</p>
                             <p>{contact.email}</p>

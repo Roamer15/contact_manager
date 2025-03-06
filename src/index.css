@@ -68,11 +68,16 @@ form {
   }
 }
 
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .contact-item {
   display: flex;
   align-items: center;
   padding: 10px;
-  gap: 10px;
   border-radius: 8px;
   justify-content: space-between;
   -webkit-box-shadow: 3px 3px 10px 3.5px #dddddd;
