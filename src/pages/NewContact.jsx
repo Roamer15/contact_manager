@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router';
 import { ContactContext } from '../context/Context';
 import ContactForm from '../components/ContactForm'
 
-export function NewContact() {
+export default function NewContact() {
 
     const { addContact } = useContext(ContactContext);
     const navigate = useNavigate();
