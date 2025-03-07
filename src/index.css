@@ -45,7 +45,7 @@ button {
 }
 
 .add::after {
-  content: '';
+  content: "";
   z-index: 2;
   background-color: #ffffff33;
   position: absolute;
@@ -121,7 +121,7 @@ form {
     color: #cccccce4;
     font-size: 1rem;
   }
-
+  
   img {
     width: 50px;
     height: 50px;
@@ -166,7 +166,7 @@ form {
 
 .input-container {
   position: relative;
-  margin: 20px;
+  margin: 20px 20px 0 20px;
 }
 
 .input-field {
@@ -175,7 +175,8 @@ form {
   padding: 10px;
   font-size: 16px;
   border: none;
-  border-bottom: 1px solid #ccc;
+  border: 1px solid #ccc;
+  border-radius: 40px;
   outline: none;
   background-color: transparent;
 }
@@ -206,8 +207,8 @@ form {
   color: #00ff48;
 }
 
-.input-field:focus + .input-label + .input-highlight {
-  width: 100%;
+.input-field:focus {
+  border: 1px solid #00ff48;
 }
 
 .custum-file-upload {
@@ -215,16 +216,16 @@ form {
   width: 150px;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
   gap: 20px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
   border: 2px dashed #cacaca;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: #ffffff;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0px 48px 35px -48px rgba(0,0,0,0.1);
+  box-shadow: 0px 48px 35px -48px rgba(0, 0, 0, 0.1);
+  margin: 10px auto;
 }
 
 .custum-file-upload .icon {
@@ -235,7 +236,7 @@ form {
 
 .custum-file-upload .icon svg {
   height: 80px;
-  fill: rgba(75, 85, 99, 1);
+  fill: #4b5563;
 }
 
 .custum-file-upload .text {
@@ -246,17 +247,37 @@ form {
 
 .custum-file-upload .text span {
   font-weight: 400;
-  color: rgba(75, 85, 99, 1);
+  color: #4b5563;
 }
 
 .custum-file-upload input {
   display: none;
 }
 
-
 .form_error {
   color: red;
   font-size: 12px;
   text-align: left;
   padding-left: 27px;
+  margin: 5px;
+}
+
+@media (max-width: 400px) {
+  .contact-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    justify-content: center;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
 }

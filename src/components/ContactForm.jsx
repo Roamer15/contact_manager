@@ -10,60 +10,63 @@ export default function ContactForm({
 }) {
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
-      <div className="input-container">
-        <input
-          placeholder="Enter your name"
-          className="input-field"
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="name" className="input-label">
-          Name
-        </label>
-        <span className="input-highlight"></span>
-        
+      <div>
+        <div className="input-container">
+          <input
+            placeholder="Enter your name"
+            className="input-field"
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <label htmlFor="name" className="input-label">
+            Name
+          </label>
+          <span className="input-highlight"></span>
+        </div>
+        {errors?.name && <p className="form_error">{errors.name}</p>}
       </div>
-      {errors?.name && <p className="form_error">{errors.name}</p>}
 
-      <div className="input-container">
-        <input
-          placeholder="Enter your phone number"
-          className="input-field"
-          type="text"
-          name="telephone"
-          value={formData.telephone}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="telephone" className="input-label">
-          Telephone
-        </label>
-        <span className="input-highlight"></span>
-       
-
+      <div>
+        <div className="input-container">
+          <input
+            placeholder="Enter your phone number"
+            className="input-field"
+            type="text"
+            name="telephone"
+            value={formData.telephone}
+            onChange={handleChange}
+            required
+          />
+          <label htmlFor="telephone" className="input-label">
+            Telephone
+          </label>
+          <span className="input-highlight"></span>
+        </div>
+        {errors?.telephone && <p className="form_error">{errors.telephone}</p>}
       </div>
-      {errors?.telephone && <p className="form_error">{errors.telephone}</p>}
 
-      <div className="input-container">
-        <input
-          placeholder="Enter your email"
-          className="input-field"
-          type="text"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="email" className="input-label">
-          Email
-        </label>
-        <span className="input-highlight"></span>
-       
+      <div>
+        <div className="input-container">
+          <input
+            placeholder="Enter your email"
+            className="input-field"
+            type="text"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <label htmlFor="email" className="input-label">
+            Email
+          </label>
+          <span className="input-highlight"></span>
+        </div>
+        {errors?.email && <p className="form_error">{errors.email}</p>}
       </div>
-      {errors?.email && <p className="form_error">{errors.email}</p>}
+
       <label className="custum-file-upload" htmlFor="file">
         <div className="icon">
           <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24">
