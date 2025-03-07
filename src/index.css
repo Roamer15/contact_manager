@@ -44,107 +44,57 @@ button {
   z-index: 3;
 }
 
+.add::after {
+  content: '';
+  z-index: 2;
+  background-color: #ffffff33;
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  width: 1.25em;
+  transform: translate3d(-525%, 0, 0) rotate(35deg);
+}
+
+.add:hover::after {
+  transition: transform 0.45s ease-in-out;
+  transform: translate3d(200%, 0, 0) rotate(35deg);
+}
+
 form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  border-radius: 8px;
+  padding: 10px;
+  -webkit-box-shadow: 3px 3px 10px 3.5px #dddddd;
+  -moz-box-shadow: 3px 3px 10px 3.5px #dddddd;
+  box-shadow: 3px 3px 10px 3.5px #dddddd;
 
-  input {
-    position: relative;
-    height: 25px;
-    border: none;
-    font-size: 18px;
-    border-bottom: 1px solid #ccc;
-
-    &:focus {
-      outline: none;
-      border-bottom: 1px solid #0aba3c;
-      transition: 0.3s ease-in-out;
-    }
-  }
-
-  input[type='file'] {
-    border: none;
-  }
-
-  input::placeholder {
-    position: absolute;
-
-    &:focus {
-      top: 0;
-      left: 5px;
-    }
+  img {
+    width: 300px;
+    height: 100px;
+    margin-top: 10px;
+    border-radius: 8px;
+    object-fit: cover;
   }
 
   button {
-    margin-top: 20px;
-    border: none;
+    margin-top: 15px;
+    padding: 10px;
     background-color: #00ff48;
-    color: #ffffffe2;
-    font-size: 16px;
-    padding: 0.5rem;
-    border-radius: 20px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: #00cc3c;
+    }
   }
 }
-/* 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-label {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-input{
-  width: 90%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-input[type='file'] {
-  border: none;
-}
-
-.form_error {
-  color: red;
-  font-size: 14px;
-}
-
-form img {
-  width: 100px;
-  height: 100px;
-  margin-top: 10px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-form button {
-  margin-top: 15px;
-  padding: 10px;
-  background-color: #00ff48;
-  border: none;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-form button:hover {
-  background-color: #00cc3c;
-} */
 
 .contact-list {
   display: flex;
@@ -212,4 +162,101 @@ form button:hover {
 
 .delete-btn:hover {
   background-color: #e53935;
+}
+
+.input-container {
+  position: relative;
+  margin: 20px;
+}
+
+.input-field {
+  display: block;
+  width: 90%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  background-color: transparent;
+}
+
+.input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: rgba(204, 204, 204, 0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #00ff48;
+  transition: all 0.3s ease;
+}
+
+.input-field:focus + .input-label {
+  top: -20px;
+  font-size: 12px;
+  color: #00ff48;
+}
+
+.input-field:focus + .input-label + .input-highlight {
+  width: 100%;
+}
+
+.custum-file-upload {
+  height: 100px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  gap: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #cacaca;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 48px 35px -48px rgba(0,0,0,0.1);
+}
+
+.custum-file-upload .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custum-file-upload .icon svg {
+  height: 80px;
+  fill: rgba(75, 85, 99, 1);
+}
+
+.custum-file-upload .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custum-file-upload .text span {
+  font-weight: 400;
+  color: rgba(75, 85, 99, 1);
+}
+
+.custum-file-upload input {
+  display: none;
+}
+
+
+.form_error {
+  color: red;
+  font-size: 12px;
+  text-align: left;
+  padding-left: 27px;
 }
