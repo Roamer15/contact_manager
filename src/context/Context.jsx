@@ -1,13 +1,18 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 export const ContactContext = createContext();
 
 export const ContactData = ({ children }) => {
+    const [contacts, setContacts] = useState(() => {
+        return JSON.parse(localStorage.getItem('contacts')) || [];
+    });
 
-    const [contacts, setContacts] = useState([])
+    useEffect(() => {
+        localStorage.setItem('contacts', JSON.stringify(contacts));
+    }, [contacts]);
 
-    const isDuplicateContact = (contacts, newContact) => {
+    const isDuplicateContact = (newContact) => {
         return contacts.some(
             (contact) =>
                 contact.name.toLowerCase() === newContact.name.toLowerCase() &&
@@ -17,7 +22,7 @@ export const ContactData = ({ children }) => {
     };
 
     const addContact = (newContact) => {
-        if (isDuplicateContact(contacts, newContact)) {
+        if (isDuplicateContact(newContact)) {
             alert('This contact already exists!');
             return;
         }
@@ -31,8 +36,8 @@ export const ContactData = ({ children }) => {
     );
 };
 
-export default ContactData
+export default ContactData;
 
 ContactData.propTypes = {
-    node: PropTypes.node
-}
+    children: PropTypes.node.isRequired,
+};
