@@ -7,8 +7,20 @@ export const ContactData = ({ children }) => {
 
     const [contacts, setContacts] = useState([])
 
+    const isDuplicateContact = (contacts, newContact) => {
+        return contacts.some(
+            (contact) =>
+                contact.name.toLowerCase() === newContact.name.toLowerCase() &&
+                contact.email.toLowerCase() === newContact.email.toLowerCase() &&
+                contact.telephone === newContact.telephone
+        );
+    };
 
     const addContact = (newContact) => {
+        if (isDuplicateContact(contacts, newContact)) {
+            alert('This contact already exists!');
+            return;
+        }
         setContacts([...contacts, newContact]);
     };
 

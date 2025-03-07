@@ -47,17 +47,32 @@ button {
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 
   input {
+    position: relative;
     height: 25px;
     border: none;
+    font-size: 18px;
     border-bottom: 1px solid #ccc;
 
     &:focus {
       outline: none;
       border-bottom: 1px solid #0aba3c;
       transition: 0.3s ease-in-out;
+    }
+  }
+
+  input[type='file'] {
+    border: none;
+  }
+
+  input::placeholder {
+    position: absolute;
+
+    &:focus {
+      top: 0;
+      left: 5px;
     }
   }
 
@@ -71,6 +86,65 @@ form {
     border-radius: 20px;
   }
 }
+/* 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input{
+  width: 90%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type='file'] {
+  border: none;
+}
+
+.form_error {
+  color: red;
+  font-size: 14px;
+}
+
+form img {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+form button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #00ff48;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #00cc3c;
+} */
 
 .contact-list {
   display: flex;

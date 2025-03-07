@@ -3,30 +3,33 @@ import PropTypes from 'prop-types';
 export default function ContactForm({ formData, handleChange, handleFileChange, handleSubmit, errors, isEditing }) {
     return (
         <form className="contact-form" onSubmit={handleSubmit}>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name"></label>
             <input
                 type="text"
                 name="name"
+                placeholder='Name'
                 value={formData.name}
                 onChange={handleChange}
                 required
             />
             {errors?.name && <p className="form_error">{errors.name}</p>}
 
-            <label htmlFor="telephone">Telephone</label>
+            <label htmlFor="telephone"></label>
             <input
                 type="tel"
                 name="telephone"
+                placeholder='Telephone'
                 value={formData.telephone}
                 onChange={handleChange}
                 required
             />
             {errors?.telephone && <p className="form_error">{errors.telephone}</p>}
 
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email"></label>
             <input
                 type="email"
                 name="email"
+                placeholder='Email'
                 value={formData.email}
                 onChange={handleChange}
                 required
