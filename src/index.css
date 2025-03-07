@@ -21,6 +21,10 @@ body {
   height: 90vh;
 }
 
+button {
+  cursor: pointer;
+}
+
 .add {
   height: 50px;
   width: 50px;
